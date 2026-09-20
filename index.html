@@ -23,7 +23,7 @@
     input,select{width:100%;padding:13px 14px;border:1px solid #d7cfc4;border-radius:12px;background:#fff}
     .btn{border:0;border-radius:12px;padding:13px 16px;font-weight:900;cursor:pointer}.primary{background:var(--navy);color:#fff}.gold{background:var(--gold);color:#fff}.ghost{background:#f1ece5;color:#27384b}
     .error{margin-top:14px;padding:12px 14px;border-radius:12px;background:#fdecea;color:#91372f;border:1px solid #f0cbc6}.msg{margin-top:14px;padding:13px 15px;border-radius:12px;background:#e9f4eb;color:#2f6538;border:1px solid #cfe1d2}
-    .queue{margin-top:20px;padding:16px;border:1px solid var(--line);border-radius:16px;background:#f7f2ea}.qgrid{display:grid;grid-template-columns:1fr 1fr;gap:12px}.qstat{text-align:center;background:#fff;border:1px solid var(--line);border-radius:14px;padding:14px}.qstat b{display:block;font-size:31px}.qstat span{font-size:12px;color:#6d747a}.qlists{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:12px}.qlist{background:#fff;border:1px solid var(--line);border-radius:14px;padding:12px}.qlist h4{margin:0 0 9px}.qperson{display:flex;justify-content:space-between;align-items:center;gap:8px;padding:9px 0;border-top:1px solid #eee7de}.qperson:first-of-type{border-top:0}.qpos{min-width:30px;height:30px;border-radius:50%;display:grid;place-items:center;background:#fff0d7;font-weight:950;color:#704914}.qname{flex:1;font-weight:800}.qticket{font-size:12px;color:var(--muted)}
+    .queue{margin-top:20px;padding:16px;border:1px solid var(--line);border-radius:16px;background:#f7f2ea}.queueBoard{grid-column:1/-1;margin-top:6px;background:var(--cream);border-radius:24px;padding:22px;box-shadow:0 18px 50px rgba(0,0,0,.22)}.queueBoard h2{margin:0 0 4px;font-size:28px}.queueBoard .lead{margin:0 0 14px;color:var(--muted)}.qgrid{display:grid;grid-template-columns:1fr 1fr;gap:12px}.qstat{text-align:center;background:#fff;border:1px solid var(--line);border-radius:14px;padding:14px}.qstat b{display:block;font-size:31px}.qstat span{font-size:12px;color:#6d747a}.qlists{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:12px}.qlist{background:#fff;border:1px solid var(--line);border-radius:14px;padding:12px}.qlist h4{margin:0 0 9px}.qperson{display:flex;justify-content:space-between;align-items:center;gap:8px;padding:9px 0;border-top:1px solid #eee7de}.qperson:first-of-type{border-top:0}.qpos{min-width:30px;height:30px;border-radius:50%;display:grid;place-items:center;background:#fff0d7;font-weight:950;color:#704914}.qname{flex:1;font-weight:800}.qticket{font-size:12px;color:var(--muted)}
     .results{margin-top:18px}.order{border:1px solid #ded5c9;background:#fff;border-radius:16px;padding:15px;margin-top:12px}.order h3{margin:3px 0}.row{display:flex;gap:10px;justify-content:space-between;align-items:flex-start}
     .pill{font-size:11px;font-weight:900;padding:6px 9px;border-radius:999px}.ok{background:#e8f3ea;color:var(--green)}.wait{background:#fdecea;color:var(--red)}
     .qty{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:12px 0}.qty div{text-align:center;background:#f5f1eb;border-radius:10px;padding:9px}.qty b{display:block;font-size:21px}.muted{color:var(--muted);font-size:13px}
@@ -51,9 +51,28 @@
           <label for="q">Nome ou telefone</label>
           <div class="lookup"><input id="q" autocomplete="name" placeholder="Ex.: Maria Silva ou 77999999999" /><button class="btn primary" id="searchBtn">Consultar</button></div>
           <div id="publicMsg"></div><div id="results" class="results"></div>
-          <div class="queue"><b>Fila de retirada agora</b><div class="qgrid"><div class="qstat"><b id="waitingCount">0</b><span>esperando para retirar</span></div><div class="qstat"><b id="receivedCount">0</b><span>já retiraram</span></div></div><div class="qlists"><div class="qlist"><h4>⏳ Esperando</h4><div id="waitingList"><div class="muted">Ninguém na fila agora.</div></div></div><div class="qlist"><h4>✅ Já retiraram</h4><div id="receivedList"><div class="muted">Nenhuma retirada registrada.</div></div></div></div><div class="muted" style="text-align:center;margin-top:8px">Atualização automática a cada 5 segundos.</div></div>
+          
         </div>
         <div class="foot"><b>Obrigado por contribuir com Missões. ❤️</b></div>
+      </div>
+      <div class="queueBoard">
+        <h2>📋 PAINEL DE ESPERA PARA RETIRADA</h2>
+        <p class="lead">Veja quem já chegou e está aguardando a preparação do pedido.</p>
+        <div class="qgrid">
+          <div class="qstat"><b id="waitingCount">0</b><span>pessoas esperando</span></div>
+          <div class="qstat"><b id="receivedCount">0</b><span>pedidos já retirados</span></div>
+        </div>
+        <div class="qlists">
+          <div class="qlist">
+            <h4>⏳ NA FILA AGORA</h4>
+            <div id="waitingList"><div class="muted">Ninguém na fila agora.</div></div>
+          </div>
+          <div class="qlist">
+            <h4>✅ JÁ RECEBERAM</h4>
+            <div id="receivedList"><div class="muted">Nenhuma retirada registrada.</div></div>
+          </div>
+        </div>
+        <div class="muted" style="text-align:center;margin-top:10px">A lista atualiza automaticamente a cada 5 segundos.</div>
       </div>
     </section>
     <section id="admin" class="admin"></section>
