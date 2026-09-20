@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+  <title>Panquecas Peniel — Retirada</title>
+  <meta name="theme-color" content="#17283c" />
+  <style>
+    :root{--navy:#17283c;--navy2:#203d58;--cream:#fbf8f2;--gold:#bf852e;--green:#2f6a39;--red:#96382f;--line:#e6ded2;--muted:#70777e}
+    *{box-sizing:border-box}
+    body{margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,sans-serif;background:linear-gradient(135deg,#102236,#203d58);color:var(--navy);min-height:100vh}
+    button,input,select{font:inherit}
+    .top{display:flex;align-items:center;gap:14px;padding:16px 20px;color:#fff;background:rgba(11,28,43,.94);position:sticky;top:0;z-index:5}
+    .brand{font-weight:900;font-size:20px}.spacer{flex:1}.top a{color:#fff;text-decoration:none;font-weight:800}
+    .wrap{max-width:1080px;margin:0 auto;padding:28px 16px 52px}
+    .hero{display:grid;grid-template-columns:1fr 1.1fr;gap:24px;align-items:start}
+    .copy{color:#fff;padding:18px 8px}.copy h1{font-size:54px;line-height:.98;margin:18px 0 14px}.copy p{font-size:19px;line-height:1.55;color:#e6edf3}
+    .lock{display:inline-block;padding:9px 13px;border-radius:999px;background:#fff1da;color:#6e4714;font-weight:950;font-size:13px}
+    .card{background:var(--cream);border-radius:24px;overflow:hidden;box-shadow:0 18px 50px rgba(0,0,0,.25)}
+    .head{padding:22px 24px;border-bottom:1px solid var(--line)}.head h2{margin:0 0 5px}.body{padding:22px 24px}.foot{padding:18px 24px;border-top:1px solid var(--line);background:#f6f0e7}
+    .notice{padding:14px 15px;border-radius:14px;background:#fff1db;color:#704914;border:1px solid #ecd2a6;margin-bottom:18px}
+    label{display:block;font-weight:850;margin:0 0 7px}.lookup{display:grid;grid-template-columns:1fr auto;gap:10px}
+    input,select{width:100%;padding:13px 14px;border:1px solid #d7cfc4;border-radius:12px;background:#fff}
+    .btn{border:0;border-radius:12px;padding:13px 16px;font-weight:900;cursor:pointer}.primary{background:var(--navy);color:#fff}.gold{background:var(--gold);color:#fff}.ghost{background:#f1ece5;color:#27384b}
+    .error{margin-top:14px;padding:12px 14px;border-radius:12px;background:#fdecea;color:#91372f;border:1px solid #f0cbc6}.msg{margin-top:14px;padding:13px 15px;border-radius:12px;background:#e9f4eb;color:#2f6538;border:1px solid #cfe1d2}
+    .queue{margin-top:20px;padding:16px;border:1px solid var(--line);border-radius:16px;background:#f7f2ea}.qgrid{display:grid;grid-template-columns:1fr 1fr;gap:12px}.qstat{text-align:center;background:#fff;border:1px solid var(--line);border-radius:14px;padding:14px}.qstat b{display:block;font-size:31px}.qstat span{font-size:12px;color:#6d747a}
+    .results{margin-top:18px}.order{border:1px solid #ded5c9;background:#fff;border-radius:16px;padding:15px;margin-top:12px}.order h3{margin:3px 0}.row{display:flex;gap:10px;justify-content:space-between;align-items:flex-start}
+    .pill{font-size:11px;font-weight:900;padding:6px 9px;border-radius:999px}.ok{background:#e8f3ea;color:var(--green)}.wait{background:#fdecea;color:var(--red)}
+    .qty{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:12px 0}.qty div{text-align:center;background:#f5f1eb;border-radius:10px;padding:9px}.qty b{display:block;font-size:21px}.muted{color:var(--muted);font-size:13px}
+    .admin{display:none}.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:10px;margin:16px 0}.stat{background:#fff;border:1px solid var(--line);border-radius:14px;padding:13px}.stat b{display:block;font-size:26px}
+    .tools{display:grid;grid-template-columns:1fr 220px auto;gap:8px;margin:12px 0}.orders{display:grid;gap:10px}.aitem{background:#fff;border:1px solid var(--line);border-radius:14px;padding:14px;display:grid;grid-template-columns:1.4fr 1fr 1fr 1.3fr;gap:12px;align-items:center}
+    .actions{display:flex;flex-wrap:wrap;gap:6px}.actions button,.actions select{font-size:12px;padding:8px;border-radius:9px}.login{max-width:420px;margin:50px auto;background:#fff;border-radius:20px;padding:24px}
+    @media(max-width:850px){.hero{grid-template-columns:1fr}.copy h1{font-size:42px}.aitem{grid-template-columns:1fr}.tools{grid-template-columns:1fr}.lookup{grid-template-columns:1fr}.qgrid{grid-template-columns:1fr 1fr}}
+  </style>
+</head>
+<body>
+  <div class="top"><div class="brand">Panquecas Peniel</div><div class="spacer"></div><a id="modeLink" href="?admin=1">Área da equipe</a></div>
+  <div class="wrap">
+    <section id="public" class="hero">
+      <div class="copy">
+        <span class="lock">🔒 VENDAS ENCERRADAS</span>
+        <h1>Retire seu pedido mais rápido.</h1>
+        <p>Vamos preparar tudo para você retirar a sua panqueca mais rápido.</p>
+        <p>Digite seu nome ou telefone, encontre seu pedido e avise nossa equipe que você chegou.</p>
+        <p><b>📍 Retirada:</b> salão no fundo da Igreja Batista Peniel.</p>
+      </div>
+      <div class="card">
+        <div class="head"><h2>Consulte seu pedido</h2><div class="muted">Digite seu nome ou número de telefone.</div></div>
+        <div class="body">
+          <div class="notice"><b>VENDAS ENCERRADAS.</b><br>Esta página agora funciona somente para consulta e retirada de pedidos já realizados.</div>
+          <label for="q">Nome ou telefone</label>
+          <div class="lookup"><input id="q" autocomplete="name" placeholder="Ex.: Maria Silva ou 77999999999" /><button class="btn primary" id="searchBtn">Consultar</button></div>
+          <div id="publicMsg"></div><div id="results" class="results"></div>
+          <div class="queue"><b>Fila de retirada agora</b><div class="qgrid"><div class="qstat"><b id="waitingCount">0</b><span>esperando para retirar</span></div><div class="qstat"><b id="receivedCount">0</b><span>já retiraram</span></div></div><div class="muted" style="text-align:center;margin-top:8px">Atualização automática a cada 5 segundos.</div></div>
+        </div>
+        <div class="foot"><b>Obrigado por contribuir com Missões. ❤️</b></div>
+      </div>
+    </section>
+    <section id="admin" class="admin"></section>
+  </div>
+<script>
+const API='https://fymmeiefawrvuwworhso.supabase.co/functions/v1/orders-api';
+let currentQuery='',adminPass=sessionStorage.getItem('peniel_admin')||'',orders=[],filter='all';
+function esc(s){return String(s??'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]))}
+async function req(url,opt={}){opt.headers=Object.assign({'Content-Type':'application/json'},opt.headers||{});const r=await fetch(url,opt);const j=await r.json().catch(()=>({}));if(!r.ok)throw new Error(j.error||'Erro ao processar.');return j}
+function statusName(s){const m={awaiting_payment:'Aguardando PIX',new:'Novo',confirmed:'Confirmado',preparing:'Em preparo',separated:'Separado',out_for_delivery:'Saiu p/ entrega',waiting_pickup:'Na fila para retirada',delivered:'Entregue',picked_up:'Recebido / retirado',cancelled:'Cancelado'};return m[s]||s}
+async function loadQueue(){try{const j=await req(API+'?action=queue');document.getElementById('waitingCount').textContent=j.waiting||0;document.getElementById('receivedCount').textContent=j.received||0}catch(e){}}
+function publicOrder(o){
+ const pay=o.payment_status==='paid'?'<span class="pill ok">PAGO</span>':'<span class="pill wait">PAGAMENTO PENDENTE</span>';
+ let status,action;
+ if(o.fulfillment_method==='delivery'){status='🚚 Pedido marcado para entrega';action='<div class="msg">Seu pedido está marcado para <b>entrega</b>. Aguarde a equipe responsável.</div>'}
+ else if(o.order_status==='picked_up'){status='✅ Pedido já retirado';action='<div class="msg">Este pedido já foi marcado como <b>recebido</b>.</div>'}
+ else if(o.order_status==='waiting_pickup'){status='⏳ Você está na fila';action='<div class="msg"><b>Vamos preparar tudo para você retirar a sua panqueca mais rápido.</b><br>Dirija-se ao salão no fundo da Igreja Peniel.</div>'}
+ else{status='🥞 Pedido localizado';action='<button class="btn gold" style="width:100%" onclick="joinQueue(\''+esc(o.protocol)+'\')">Já cheguei — entrar na fila</button>'}
+ return '<div class="order"><div class="row"><div><div class="muted">'+status+'</div><h3>'+esc(o.customer_name)+'</h3><div class="muted">'+esc(o.protocol)+'</div></div>'+pay+'</div><div class="qty"><div><b>'+o.beef_qty+'</b><span>carne</span></div><div><b>'+o.chicken_qty+'</b><span>frango</span></div><div><b>'+o.total_items+'</b><span>total</span></div></div>'+action+'</div>';
+}
+async function searchOrder(){currentQuery=document.getElementById('q').value.trim();const msg=document.getElementById('publicMsg'),box=document.getElementById('results');msg.innerHTML='';box.innerHTML='';if(currentQuery.length<3){msg.innerHTML='<div class="error">Digite seu nome ou telefone.</div>';return}document.getElementById('searchBtn').disabled=true;try{const j=await req(API+'?action=lookup',{method:'POST',body:JSON.stringify({query:currentQuery})});if(!j.matches||!j.matches.length){msg.innerHTML='<div class="error">Não encontramos um pedido com esse nome ou telefone. Procure a equipe caso precise de ajuda.</div>'}else{box.innerHTML=(j.matches.length>1?'<b>Encontramos mais de um pedido. Escolha o seu:</b>':'')+j.matches.map(publicOrder).join('')}if(j.counts){document.getElementById('waitingCount').textContent=j.counts.waiting||0;document.getElementById('receivedCount').textContent=j.counts.received||0}}catch(e){msg.innerHTML='<div class="error">'+esc(e.message)+'</div>'}finally{document.getElementById('searchBtn').disabled=false}}
+async function joinQueue(protocol){const msg=document.getElementById('publicMsg');try{const j=await req(API+'?action=join_waitlist',{method:'POST',body:JSON.stringify({protocol,query:currentQuery})});msg.innerHTML='<div class="msg">'+esc(j.message||'Você entrou na fila de retirada.')+'</div>';await searchOrder()}catch(e){msg.innerHTML='<div class="error">'+esc(e.message)+'</div>'}}
+document.getElementById('searchBtn').onclick=searchOrder;document.getElementById('q').addEventListener('keydown',e=>{if(e.key==='Enter')searchOrder()});
+function adminLogin(){adminPass=document.getElementById('pass').value;loadOrders(true)}
+function adminLogout(){sessionStorage.removeItem('peniel_admin');adminPass='';orders=[];renderAdmin()}
+async function loadOrders(login){try{const j=await req(API+'?action=list',{headers:{'x-admin-password':adminPass}});orders=j.orders||[];sessionStorage.setItem('peniel_admin',adminPass);renderAdmin()}catch(e){if(login)adminPass='';renderAdmin(e.message)}}
+async function updateOrder(protocol,patch){try{await req(API+'?action=update',{method:'PATCH',headers:{'x-admin-password':adminPass},body:JSON.stringify(Object.assign({protocol},patch))});await loadOrders(false)}catch(e){alert(e.message)}}
+function renderAdmin(err){
+ const root=document.getElementById('admin');
+ if(!adminPass){root.innerHTML='<div class="login"><h2>Área da equipe</h2><p class="muted">Entre para controlar a fila de retirada.</p><label>Senha</label><input id="pass" type="password" placeholder="Senha da equipe"><div style="height:10px"></div><button class="btn primary" onclick="adminLogin()">Entrar</button>'+(err?'<div class="error">'+esc(err)+'</div>':'')+'</div>';return}
+ const waiting=orders.filter(o=>o.fulfillment_method==='pickup'&&o.order_status==='waiting_pickup').length,received=orders.filter(o=>o.fulfillment_method==='pickup'&&o.order_status==='picked_up').length,delivered=orders.filter(o=>o.fulfillment_method==='delivery'&&o.order_status==='delivered').length,paid=orders.filter(o=>o.payment_status==='paid').length,items=orders.reduce((a,o)=>a+Number(o.total_items||0),0),list=orders.filter(o=>filter==='all'||o.order_status===filter);
+ const opts=['all','waiting_pickup','picked_up','new','confirmed','preparing','separated','out_for_delivery','delivered','cancelled'].map(s=>'<option value="'+s+'" '+(filter===s?'selected':'')+'>'+(s==='all'?'Todos os status':statusName(s))+'</option>').join('');
+ root.innerHTML='<div class="card"><div class="head"><div class="row"><div><h2>Fila e entregas</h2><div class="muted">Atualização automática a cada 5 segundos.</div></div><button class="btn ghost" onclick="adminLogout()">Sair</button></div></div><div class="body"><div class="stats"><div class="stat">Na fila<b>'+waiting+'</b></div><div class="stat">Já retiraram<b>'+received+'</b></div><div class="stat">Entregues<b>'+delivered+'</b></div><div class="stat">Pagos<b>'+paid+'</b></div><div class="stat">Pedidos<b>'+orders.length+'</b></div><div class="stat">Panquecas<b>'+items+'</b></div></div><div class="tools"><input id="asearch" placeholder="Buscar nome ou protocolo"><select onchange="filter=this.value;renderAdmin()">'+opts+'</select><button class="btn ghost" onclick="loadOrders(false)">Atualizar</button></div><div class="orders" id="ordersBox">'+list.map(adminRow).join('')+'</div></div></div>';
+ document.getElementById('asearch').addEventListener('input',function(){const q=this.value.toLowerCase();document.getElementById('ordersBox').innerHTML=orders.filter(o=>(filter==='all'||o.order_status===filter)&&(o.customer_name.toLowerCase().includes(q)||o.protocol.toLowerCase().includes(q))).map(adminRow).join('')});
+}
+function adminRow(o){
+ let quick='';
+ if(o.fulfillment_method==='pickup'&&o.order_status==='waiting_pickup')quick='<button class="btn gold" onclick="updateOrder(\''+o.protocol+'\',{order_status:\'picked_up\'})">✓ Recebido</button>';
+ else if(o.fulfillment_method==='pickup'&&o.order_status!=='picked_up'&&o.order_status!=='cancelled')quick='<button class="btn ghost" onclick="updateOrder(\''+o.protocol+'\',{order_status:\'waiting_pickup\'})">Colocar na fila</button>';
+ else if(o.fulfillment_method==='delivery'&&o.order_status!=='delivered'&&o.order_status!=='cancelled')quick='<button class="btn gold" onclick="updateOrder(\''+o.protocol+'\',{order_status:\'delivered\'})">✓ Entregue</button>';
+ const statusOpts=['new','confirmed','preparing','separated','waiting_pickup','picked_up','out_for_delivery','delivered','cancelled'].map(s=>'<option value="'+s+'" '+(o.order_status===s?'selected':'')+'>'+statusName(s)+'</option>').join('');
+ return '<div class="aitem"><div><b>'+esc(o.protocol)+' · '+esc(o.customer_name)+'</b><div class="muted">'+esc(o.whatsapp||'')+'</div></div><div><b>'+o.beef_qty+' carne · '+o.chicken_qty+' frango</b><div class="muted">'+o.total_items+' panquecas</div></div><div><span class="pill '+(o.payment_status==='paid'?'ok':'wait')+'">'+(o.payment_status==='paid'?'PAGO':'A RECEBER')+'</span><div class="muted">'+(o.fulfillment_method==='delivery'?'ENTREGA':'RETIRADA')+'</div></div><div class="actions">'+quick+'<select onchange="updateOrder(\''+o.protocol+'\',{order_status:this.value})">'+statusOpts+'</select></div></div>';
+}
+const isAdmin=new URLSearchParams(location.search).get('admin')==='1';
+if(isAdmin){document.getElementById('public').style.display='none';document.getElementById('admin').style.display='block';document.getElementById('modeLink').textContent='← Voltar';document.getElementById('modeLink').href='?';renderAdmin();if(adminPass)loadOrders(false);setInterval(()=>{if(adminPass)loadOrders(false)},5000)}
+else{loadQueue();setInterval(loadQueue,5000)}
+</script>
+</body>
+</html>
