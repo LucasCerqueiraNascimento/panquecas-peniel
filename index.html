@@ -29,7 +29,7 @@
     .qty{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:12px 0}.qty div{text-align:center;background:#f5f1eb;border-radius:10px;padding:9px}.qty b{display:block;font-size:21px}.muted{color:var(--muted);font-size:13px}
     .admin{display:none}.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:10px;margin:16px 0}.stat{background:#fff;border:1px solid var(--line);border-radius:14px;padding:13px}.stat b{display:block;font-size:26px}
     .tools{display:grid;grid-template-columns:1fr 220px auto;gap:8px;margin:12px 0}.orders{display:grid;gap:10px}.aitem{background:#fff;border:1px solid var(--line);border-radius:14px;padding:14px;display:grid;grid-template-columns:1.4fr 1fr 1fr 1.3fr;gap:12px;align-items:center}
-    .actions{display:flex;flex-wrap:wrap;gap:6px}.actions button,.actions select{font-size:12px;padding:8px;border-radius:9px}.login{max-width:420px;margin:50px auto;background:#fff;border-radius:20px;padding:24px}
+    .actions{display:flex;flex-wrap:wrap;gap:6px}.nameLine{display:flex;align-items:center;gap:8px;flex-wrap:wrap}.receivedBtn{background:#2f6a39;color:#fff;border:0;border-radius:9px;padding:7px 10px;font-weight:900;cursor:pointer}.actions button,.actions select{font-size:12px;padding:8px;border-radius:9px}.login{max-width:420px;margin:50px auto;background:#fff;border-radius:20px;padding:24px}
     @media(max-width:850px){.hero{grid-template-columns:1fr}.copy h1{font-size:42px}.aitem{grid-template-columns:1fr}.tools{grid-template-columns:1fr}.lookup{grid-template-columns:1fr}.qgrid{grid-template-columns:1fr 1fr}.qlists{grid-template-columns:1fr}}
   </style>
 </head>
@@ -110,12 +110,16 @@ function renderAdmin(err){
  document.getElementById('asearch').addEventListener('input',function(){const q=this.value.toLowerCase();document.getElementById('ordersBox').innerHTML=orders.filter(o=>(filter==='all'||o.order_status===filter)&&(o.customer_name.toLowerCase().includes(q)||o.protocol.toLowerCase().includes(q))).sort((a,b)=>String(a.customer_name||'').localeCompare(String(b.customer_name||''),'pt-BR',{sensitivity:'base'})).map(adminRow).join('')});
 }
 function adminRow(o){
- let quick='';
- if(o.fulfillment_method==='pickup'&&o.order_status==='waiting_pickup')quick='<button class="btn gold" onclick="updateOrder(\''+o.protocol+'\',{order_status:\'picked_up\'})">✓ Recebido</button>';
- else if(o.fulfillment_method==='pickup'&&o.order_status!=='picked_up'&&o.order_status!=='cancelled')quick='<button class="btn ghost" onclick="updateOrder(\''+o.protocol+'\',{order_status:\'waiting_pickup\'})">Colocar na fila</button>';
- else if(o.fulfillment_method==='delivery'&&o.order_status!=='delivered'&&o.order_status!=='cancelled')quick='<button class="btn gold" onclick="updateOrder(\''+o.protocol+'\',{order_status:\'delivered\'})">✓ Entregue</button>';
+ let quick='',nameButton='';
+ if(o.fulfillment_method==='pickup'&&o.order_status==='waiting_pickup'){
+   nameButton='<button class="receivedBtn" onclick="updateOrder(\''+o.protocol+'\',{order_status:\'picked_up\'})">✓ Já recebeu</button>';
+ } else if(o.fulfillment_method==='pickup'&&o.order_status!=='picked_up'&&o.order_status!=='cancelled'){
+   quick='<button class="btn ghost" onclick="updateOrder(\''+o.protocol+'\',{order_status:\'waiting_pickup\'})">Colocar na fila</button>';
+ } else if(o.fulfillment_method==='delivery'&&o.order_status!=='delivered'&&o.order_status!=='cancelled'){
+   quick='<button class="btn gold" onclick="updateOrder(\''+o.protocol+'\',{order_status:\'delivered\'})">✓ Entregue</button>';
+ }
  const statusOpts=['new','confirmed','preparing','separated','waiting_pickup','picked_up','out_for_delivery','delivered','cancelled'].map(s=>'<option value="'+s+'" '+(o.order_status===s?'selected':'')+'>'+statusName(s)+'</option>').join('');
- return '<div class="aitem"><div><b>'+esc(o.protocol)+' · '+esc(o.customer_name)+'</b><div class="muted">'+esc(o.whatsapp||'')+'</div></div><div><b>'+o.beef_qty+' carne · '+o.chicken_qty+' frango</b><div class="muted">'+o.total_items+' panquecas</div></div><div><span class="pill '+(o.payment_status==='paid'?'ok':'wait')+'">'+(o.payment_status==='paid'?'PAGO':'A RECEBER')+'</span><div class="muted">'+(o.fulfillment_method==='delivery'?'ENTREGA':'RETIRADA')+'</div></div><div class="actions">'+quick+'<select onchange="updateOrder(\''+o.protocol+'\',{order_status:this.value})">'+statusOpts+'</select></div></div>';
+ return '<div class="aitem"><div><div class="nameLine">'+nameButton+'<b>'+esc(o.protocol)+' · '+esc(o.customer_name)+'</b></div><div class="muted">'+esc(o.whatsapp||'')+'</div></div><div><b>'+o.beef_qty+' carne · '+o.chicken_qty+' frango</b><div class="muted">'+o.total_items+' panquecas</div></div><div><span class="pill '+(o.payment_status==='paid'?'ok':'wait')+'">'+(o.payment_status==='paid'?'PAGO':'A RECEBER')+'</span><div class="muted">'+(o.fulfillment_method==='delivery'?'ENTREGA':'RETIRADA')+'</div></div><div class="actions">'+quick+'<select onchange="updateOrder(\''+o.protocol+'\',{order_status:this.value})">'+statusOpts+'</select></div></div>';
 }
 const isAdmin=new URLSearchParams(location.search).get('admin')==='1';
 if(isAdmin){document.getElementById('public').style.display='none';document.getElementById('admin').style.display='block';document.getElementById('modeLink').textContent='← Voltar';document.getElementById('modeLink').href='?';renderAdmin();if(adminPass)loadOrders(false);setInterval(()=>{if(adminPass)loadOrders(false)},5000)}
