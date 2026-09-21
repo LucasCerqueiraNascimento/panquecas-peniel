@@ -1,0 +1,38 @@
+<!doctype html><html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#090a0f"><title>Divulgação — Casa do Julgamento 2026</title><link rel="stylesheet" href="/support.css"></head><body>
+<header class="top"><div class="shell nav"><div class="brand">Casa do Julgamento<small>Área de divulgação</small></div><div class="spacer"></div><a class="back" href="/participar">← Voltar</a></div></header>
+<main class="shell main">
+<section class="hero"><div><div class="eyebrow">DIVULGAÇÃO E INFLUENCIADORES</div><h1>Use sua voz para convidar alguém.</h1><p class="lead">Criamos um ponto simples para quem deseja ajudar a espalhar o convite. Escolha uma mensagem, adapte ao seu jeito e compartilhe com sua audiência, igreja, amigos ou cidade.</p></div><div class="side-note"><div class="note">🎥 Vídeos curtos e pessoais costumam funcionar melhor que anúncios frios.</div><div class="note">📱 Um convite direto no WhatsApp pode trazer grupos inteiros.</div><div class="note">🚌 Se sua audiência for de outra cidade, compartilhe também a página de caravanas.</div></div></section>
+
+<section class="section"><div class="eyebrow">KIT RÁPIDO</div><h2>Mensagem pronta para compartilhar</h2><p>Escolha o tipo de convite. O texto muda automaticamente.</p>
+<div class="tabs"><button class="tab active" data-type="whatsapp">WhatsApp</button><button class="tab" data-type="story">Story / legenda</button><button class="tab" data-type="video">Roteiro de vídeo</button></div>
+<div class="copybox"><p id="copyText"></p><div class="actions"><button class="btn gold" id="copyBtn">Copiar texto</button><button class="btn ghost" id="shareBtn">Compartilhar</button></div></div>
+</section>
+
+<section class="section"><div class="eyebrow">IDEIAS SIMPLES</div><h2>Três formas de gerar interesse</h2><div class="grid3">
+<div class="item"><b>1. Conte por que você iria</b><span>Um vídeo pessoal de 20–30 segundos: “Eu quero viver essa experiência porque…”</span></div>
+<div class="item"><b>2. Convide uma pessoa específica</b><span>Marque alguém ou envie no privado. Convite pessoal costuma ter mais força do que uma postagem genérica.</span></div>
+<div class="item"><b>3. Mostre a data e facilite o próximo passo</b><span>Inclua o link oficial e, para cidades vizinhas, o link de caravanas.</span></div>
+</div></section>
+
+<section class="section"><div class="eyebrow">INFLUENCIADORES E CRIADORES</div><h2>Quer ajudar de forma mais próxima?</h2><p>Envie seu perfil e diga como gostaria de colaborar. A equipe pode conversar com você sobre conteúdo, visita, cobertura e divulgação do projeto.</p>
+<form class="form" id="creatorForm">
+<div class="field"><label>Seu nome *</label><input id="name" required></div><div class="field"><label>Instagram / perfil *</label><input id="profile" required placeholder="@seuperfil"></div>
+<div class="field"><label>Cidade *</label><input id="city" required></div><div class="field"><label>Plataforma principal</label><select id="platform"><option>Instagram</option><option>TikTok</option><option>YouTube</option><option>Facebook</option><option>Outra</option></select></div>
+<div class="field"><label>Tamanho aproximado da audiência</label><input id="audience" placeholder="Ex.: 8 mil seguidores"></div><div class="field"><label>Como gostaria de ajudar?</label><select id="help"><option>Divulgar nas redes</option><option>Produzir vídeos</option><option>Cobrir o evento</option><option>Mobilizar minha igreja/cidade</option><option>Outra forma</option></select></div>
+<div class="field full"><label>Mensagem</label><textarea id="message" placeholder="Conte um pouco da sua ideia."></textarea></div>
+<div class="full actions"><button class="btn red" type="submit">Falar com a equipe no WhatsApp</button></div>
+</form></section>
+<div class="footer"><span>Casa do Julgamento 2026</span><a href="/caravana">Organizar uma caravana →</a></div></main>
+<script>
+const texts={
+whatsapp:'Quero te convidar para a Casa do Julgamento 2026 — “Cilada do Coração”, na Igreja Batista Peniel, em Vitória da Conquista. É uma experiência de reflexão sobre escolhas, consequências e eternidade. As sessões acontecem em novembro. Veja as datas e informações no site oficial: '+location.origin,
+story:'CASA DO JULGAMENTO 2026 • CILADA DO CORAÇÃO\nUma experiência que confronta escolhas, consequências e eternidade.\nNovembro • Igreja Batista Peniel • Vitória da Conquista\nDatas e informações: '+location.origin,
+video:'“Oi, pessoal! Quero fazer um convite diferente. Em novembro acontece a Casa do Julgamento 2026, com o tema Cilada do Coração, na Igreja Batista Peniel em Vitória da Conquista. É uma experiência pensada para provocar reflexão sobre escolhas, consequências e eternidade. Se você é daqui ou de uma cidade próxima, entra no link para ver as datas — e também dá para organizar caravana com sua igreja.”'
+};
+let type='whatsapp';const out=document.getElementById('copyText');function render(){out.textContent=texts[type]}render();
+document.querySelectorAll('.tab').forEach(b=>b.onclick=()=>{document.querySelectorAll('.tab').forEach(x=>x.classList.remove('active'));b.classList.add('active');type=b.dataset.type;render()});
+document.getElementById('copyBtn').onclick=async()=>{await navigator.clipboard.writeText(texts[type]);document.getElementById('copyBtn').textContent='Copiado ✓';setTimeout(()=>document.getElementById('copyBtn').textContent='Copiar texto',1400)};
+document.getElementById('shareBtn').onclick=async()=>{if(navigator.share)await navigator.share({title:'Casa do Julgamento 2026',text:texts[type],url:location.origin});else{await navigator.clipboard.writeText(texts[type]);alert('Texto copiado para compartilhar.')}};
+const v=id=>(document.getElementById(id).value||'').trim();
+document.getElementById('creatorForm').onsubmit=e=>{e.preventDefault();const m=['Olá! Quero ajudar na divulgação da Casa do Julgamento 2026.','','Nome: '+v('name'),'Perfil: '+v('profile'),'Cidade: '+v('city'),'Plataforma: '+v('platform'),'Audiência: '+(v('audience')||'Não informada'),'Como quero ajudar: '+v('help'),'Mensagem: '+(v('message')||'Sem observações')].join('\n');window.open('https://wa.me/5577988351204?text='+encodeURIComponent(m),'_blank','noopener')};
+</script></body></html>
