@@ -1,10 +1,14 @@
-# Panquecas Peniel — Retirada
+# Casa do Julgamento 2026 — Igreja Batista Peniel
 
-Página pública de consulta e fila de retirada para o evento Panquecas Peniel.
+Site oficial do projeto **Casa do Julgamento 2026 — Cilada do Coração**, em Vitória da Conquista - BA.
 
-- Vendas encerradas.
-- Busca por nome ou telefone.
-- Entrada na fila de retirada.
-- Contador de pessoas aguardando e já retiradas.
-- Área da equipe em `/?admin=1`.
-- Backend: Supabase Edge Function `orders-api`.
+## Áreas do site
+
+- Página principal dinâmica com programação e contagem regressiva.
+- Organização de caravanas para igrejas de outras cidades.
+- Área de divulgação e influenciadores.
+- Página de parcerias e patrocínios.
+- Doações para a cantina com propósito.
+- Área interna da equipe preservando registros do projeto anterior.
+
+Hospedagem: Vercel.
