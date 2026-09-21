@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
-  <title>Panquecas Peniel — Retirada</title>
+  <title>Casa do Julgamento 2026 — Igreja Batista Peniel</title>
   <meta name="theme-color" content="#17283c" />
   <style>
     :root{--navy:#17283c;--navy2:#203d58;--cream:#fbf8f2;--gold:#bf852e;--green:#2f6a39;--red:#96382f;--line:#e6ded2;--muted:#70777e}
@@ -31,49 +31,136 @@
     .tools{display:grid;grid-template-columns:1fr 220px auto;gap:8px;margin:12px 0}.orders{display:grid;gap:10px}.aitem{background:#fff;border:1px solid var(--line);border-radius:14px;padding:14px;display:grid;grid-template-columns:1.4fr 1fr 1fr 1.3fr;gap:12px;align-items:center}
     .actions{display:flex;flex-wrap:wrap;gap:6px}.nameLine{display:flex;align-items:center;gap:8px;flex-wrap:wrap}.receivedBtn{background:#2f6a39;color:#fff;border:0;border-radius:9px;padding:7px 10px;font-weight:900;cursor:pointer}.actions button,.actions select{font-size:12px;padding:8px;border-radius:9px}.login{max-width:420px;margin:50px auto;background:#fff;border-radius:20px;padding:24px}
     @media(max-width:850px){.hero{grid-template-columns:1fr}.copy h1{font-size:42px}.aitem{grid-template-columns:1fr}.tools{grid-template-columns:1fr}.lookup{grid-template-columns:1fr}.qgrid{grid-template-columns:1fr 1fr}.qlists{grid-template-columns:1fr}}
+  
+    /* Casa do Julgamento 2026 */
+    .cj-public{color:#f5f7fb}
+    .cj-hero{display:grid;grid-template-columns:1.05fr .95fr;gap:22px}
+    .cj-hero-main,.cj-side,.cj-section{background:linear-gradient(180deg,rgba(19,23,32,.98),rgba(8,11,17,.98));border:1px solid rgba(255,255,255,.10);box-shadow:0 22px 60px rgba(0,0,0,.32)}
+    .cj-hero-main{border-radius:30px;padding:42px 38px;min-height:540px;display:flex;flex-direction:column;justify-content:center;position:relative;overflow:hidden}
+    .cj-hero-main:before{content:"";position:absolute;right:-120px;top:-170px;width:420px;height:420px;border-radius:50%;background:radial-gradient(circle,rgba(255,45,56,.28),rgba(255,45,56,0) 68%)}
+    .cj-kicker{width:max-content;max-width:100%;padding:9px 13px;border:1px solid rgba(255,255,255,.10);border-radius:999px;background:rgba(255,255,255,.05);color:#ff989d;font-size:12px;font-weight:900;letter-spacing:.13em}
+    .cj-hero-main h1{font-size:clamp(52px,7vw,88px);line-height:.88;letter-spacing:-.05em;margin:18px 0 10px;position:relative}.cj-hero-main h1 span{color:#ff3f49}
+    .cj-theme{font-size:clamp(19px,2.4vw,29px);letter-spacing:.14em;text-transform:uppercase;font-weight:900;color:#e3e8ef;position:relative}
+    .cj-lead{font-size:18px;line-height:1.75;color:#b7bfcc;max-width:700px;position:relative}
+    .cj-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:16px;position:relative}.cj-btn{padding:14px 18px;border-radius:14px;font-weight:900;text-decoration:none}.cj-primary{background:linear-gradient(180deg,#f03a44,#bb1019);color:#fff}.cj-ghost{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);color:#fff}
+    .cj-side{border-radius:30px;padding:24px;display:flex;flex-direction:column;gap:16px}.cj-poster,.cj-contact{background:#0b0e14;border:1px solid rgba(255,255,255,.08);border-radius:22px;padding:22px}.cj-poster-top{display:flex;justify-content:space-between;gap:10px}.cj-pill{padding:8px 10px;border-radius:10px;font-size:11px;font-weight:900}.cj-blue{background:#14488e}.cj-red{background:#d51f2a}
+    .cj-poster h2{font-size:42px;line-height:.94;letter-spacing:-.04em;margin:16px 0 8px}.cj-poster h2 span{display:block;color:#ff5159}.cj-poster>p,.cj-contact p{color:#b7bfcc;line-height:1.7}
+    .cj-dates{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:18px}.cj-dates div{background:#111722;border:1px solid rgba(255,255,255,.07);border-radius:16px;padding:14px}.cj-dates b{display:block;color:#ff5961;font-size:22px}.cj-dates span{font-weight:800}
+    .cj-price{margin-top:14px;border-radius:18px;background:#f5f6f8;color:#0b0e14;padding:18px;text-align:center}.cj-price small{display:block;font-weight:800}.cj-price strong{display:block;font-size:42px;line-height:1;margin:5px 0}
+    .cj-section{margin-top:22px;border-radius:28px;padding:30px}.cj-eyebrow{color:#ff8187;font-weight:900;font-size:12px;letter-spacing:.14em;margin-bottom:6px}.cj-section h2{margin:0;font-size:clamp(30px,4vw,44px);letter-spacing:-.035em}.cj-desc{max-width:780px;color:#b7bfcc;line-height:1.7}
+    .cj-grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:18px}.cj-grid3 article,.cj-list div,.cj-steps>div{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08);border-radius:20px;padding:18px}.cj-grid3 i{font-style:normal;font-size:26px}.cj-grid3 h3,.cj-steps h3{margin:9px 0 6px}.cj-grid3 p,.cj-list span,.cj-steps p{color:#b7bfcc;line-height:1.6;font-size:14px;margin:0}
+    .cj-grid2{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:18px}.cj-list{display:grid;gap:10px}.cj-list b,.cj-list span{display:block}.cj-list b{margin-bottom:5px}
+    .cj-steps{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:18px}.cj-steps em{display:grid;place-items:center;width:36px;height:36px;border-radius:50%;background:#d51f2a;color:#fff;font-style:normal;font-weight:950}
+    .cj-footer{text-align:center;color:#8e98a7;padding:28px 10px 6px;font-size:13px}
+    body{background:radial-gradient(circle at 15% 0%,rgba(213,31,42,.15),transparent 28%),linear-gradient(180deg,#0d1017,#07080c);color:#f5f7fb}
+    .top{background:rgba(7,8,12,.88);border-bottom:1px solid rgba(255,255,255,.08)}.top .brand{color:#fff}.top a{color:#fff}
+    @media(max-width:960px){.cj-hero,.cj-grid2{grid-template-columns:1fr}.cj-grid3{grid-template-columns:1fr 1fr}.cj-steps{grid-template-columns:1fr 1fr}}
+    @media(max-width:680px){.cj-hero-main{padding:30px 22px;min-height:auto}.cj-side{padding:16px}.cj-section{padding:22px}.cj-grid3,.cj-steps,.cj-dates{grid-template-columns:1fr}.cj-poster h2{font-size:34px}}
+
   </style>
 </head>
 <body>
-  <div class="top"><div class="brand">Panquecas Peniel</div><div class="spacer"></div><a id="modeLink" href="?admin=1">Área da equipe</a></div>
+  <div class="top"><div class="brand">Casa do Julgamento</div><div class="spacer"></div><a id="modeLink" href="?admin=1">Área da equipe</a></div>
   <div class="wrap">
-    <section id="public" class="hero">
-      <div class="copy">
-        <span class="lock">🔒 VENDAS ENCERRADAS</span>
-        <h1>Retire seu pedido mais rápido.</h1>
-        <p>Vamos preparar tudo para você retirar a sua panqueca mais rápido.</p>
-        <p>Digite seu nome ou telefone, encontre seu pedido e avise nossa equipe que você chegou.</p>
-        <p><b>📍 Retirada:</b> salão no fundo da Igreja Batista Peniel.</p>
-      </div>
-      <div class="card">
-        <div class="head"><h2>Consulte seu pedido</h2><div class="muted">Digite seu nome ou número de telefone.</div></div>
-        <div class="body">
-          <div class="notice"><b>VENDAS ENCERRADAS.</b><br>Esta página agora funciona somente para consulta e retirada de pedidos já realizados.</div>
-          <label for="q">Nome ou telefone</label>
-          <div class="lookup"><input id="q" autocomplete="name" placeholder="Ex.: Maria Silva ou 77999999999" /><button class="btn primary" id="searchBtn">Consultar</button></div>
-          <div id="publicMsg"></div><div id="results" class="results"></div>
-          
-        </div>
-        <div class="foot"><b>Obrigado por contribuir com Missões. ❤️</b></div>
-      </div>
-      <div class="queueBoard">
-        <h2>📋 PAINEL DE ESPERA PARA RETIRADA</h2>
-        <p class="lead">Veja quem já chegou e está aguardando a preparação do pedido.</p>
-        <div class="qgrid">
-          <div class="qstat"><b id="waitingCount">0</b><span>pessoas esperando</span></div>
-          <div class="qstat"><b id="receivedCount">0</b><span>pedidos já retirados</span></div>
-        </div>
-        <div class="qlists">
-          <div class="qlist">
-            <h4>⏳ NA FILA AGORA</h4>
-            <div id="waitingList"><div class="muted">Ninguém na fila agora.</div></div>
-          </div>
-          <div class="qlist">
-            <h4>✅ JÁ RECEBERAM</h4>
-            <div id="receivedList"><div class="muted">Nenhuma retirada registrada.</div></div>
+
+    <section id="public" class="cj-public">
+      <div class="cj-hero">
+        <div class="cj-hero-main">
+          <div class="cj-kicker">CASA DO JULGAMENTO • 2026</div>
+          <h1>Cilada do <span>Coração</span></h1>
+          <div class="cj-theme">Uma experiência de reflexão e fé</div>
+          <p class="cj-lead">A Igreja Batista Peniel apresenta a edição 2026 da <b>Casa do Julgamento</b>. Uma experiência evangelística interativa que conduz o público por cenas e ambientes que provocam reflexão sobre escolhas, consequências, vida e eternidade.</p>
+          <div class="cj-actions">
+            <a class="cj-btn cj-primary" href="#programacao">Ver programação</a>
+            <a class="cj-btn cj-ghost" href="#participar">Quero participar</a>
           </div>
         </div>
-        <div class="muted" style="text-align:center;margin-top:10px">A lista atualiza automaticamente a cada 5 segundos.</div>
+
+        <aside class="cj-side" id="programacao">
+          <div class="cj-poster">
+            <div class="cj-poster-top">
+              <span class="cj-pill cj-blue">Acessível em Libras</span>
+              <span class="cj-pill cj-red">2026</span>
+            </div>
+            <h2>Casa do Julgamento <span>Cilada do Coração</span></h2>
+            <p>Novembro de 2026 • Igreja Batista Peniel • Vitória da Conquista - BA</p>
+            <div class="cj-dates">
+              <div><b>09 NOV</b><span>17h</span></div>
+              <div><b>13 NOV</b><span>20h</span></div>
+              <div><b>14 NOV</b><span>18h</span></div>
+              <div><b>19 NOV</b><span>20h</span></div>
+              <div><b>20 NOV</b><span>17h</span></div>
+              <div><b>21 NOV</b><span>18h</span></div>
+            </div>
+            <div class="cj-price"><small>Ingresso</small><strong>R$ 15,00</strong><small>+ 1kg de alimento não perecível</small></div>
+          </div>
+
+          <div class="cj-contact">
+            <h3>Informações</h3>
+            <p>WhatsApp: <b>77 98835-1204</b><br>
+            Telefone: <b>77 3424-2554</b><br>
+            Instagram: <b>@ibatistapeniel.vc</b><br>
+            Facebook: <b>Igreja Batista Peniel</b><br>
+            Endereço: <b>Rua Olavo Bilac, 94 — Vitória da Conquista - BA</b></p>
+          </div>
+        </aside>
       </div>
+
+      <section class="cj-section" id="sobre">
+        <div class="cj-eyebrow">MAIS QUE UM EVENTO</div>
+        <h2>Uma experiência pensada para alcançar vidas</h2>
+        <p class="cj-desc">Esta página será o centro de divulgação da Casa do Julgamento, reunindo programação, informações, mobilização, alimentação e os próximos passos do projeto.</p>
+        <div class="cj-grid3">
+          <article><i>🎭</i><h3>Experiência interativa</h3><p>O visitante percorre ambientes e cenas em sequência, aumentando a imersão na mensagem.</p></article>
+          <article><i>📣</i><h3>Divulgação centralizada</h3><p>Um único link com datas, horários, endereço, contatos e informações importantes.</p></article>
+          <article><i>🤝</i><h3>Mobilização da igreja</h3><p>Recepção, oração, mídia, teatro, alimentação, aconselhamento e apoio aos visitantes.</p></article>
+          <article><i>🥫</i><h3>Ação solidária</h3><p>O alimento não perecível pode ganhar uma meta pública de arrecadação e prestação de contas.</p></article>
+          <article><i>📱</i><h3>Conteúdo para redes</h3><p>Cards individuais por data e vídeos curtos podem direcionar todos para esta página.</p></article>
+          <article><i>📊</i><h3>Área da equipe</h3><p>O painel administrativo das panquecas continua preservado para consulta e prestação de contas.</p></article>
+        </div>
+      </section>
+
+      <section class="cj-section" id="alimentacao">
+        <div class="cj-eyebrow">ARRECADAÇÃO E COMUNHÃO</div>
+        <h2>Barraca de alimentação</h2>
+        <p class="cj-desc">A barraca pode virar uma pequena praça de convivência para receber o público antes e depois das sessões e ajudar na arrecadação.</p>
+        <div class="cj-grid2">
+          <div class="cj-list">
+            <div><b>🍔 Cardápio enxuto</b><span>Cachorro-quente, hambúrguer, tortas, doces, refrigerante, água, café e combos.</span></div>
+            <div><b>💳 Pagamento rápido</b><span>PIX com QR Code visível, dinheiro e organização simples para evitar filas.</span></div>
+            <div><b>🎟️ Combo temático</b><span>Um “Combo Casa do Julgamento” facilita a venda e pode aumentar a arrecadação.</span></div>
+          </div>
+          <div class="cj-list">
+            <div><b>📸 Ponto para foto</b><span>Um painel com o tema “Cilada do Coração” pode gerar divulgação espontânea.</span></div>
+            <div><b>🙏 Espaço de acolhimento</b><span>Um local tranquilo para conversa, oração e integração após as sessões.</span></div>
+            <div><b>🧾 Controle interno</b><span>Registro de vendas, estoque, doações e fechamento do caixa.</span></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="cj-section" id="participar">
+        <div class="cj-eyebrow">MOBILIZAÇÃO</div>
+        <h2>Como participar desde agora</h2>
+        <div class="cj-steps">
+          <div><em>1</em><h3>Ore</h3><p>Ore pela equipe, pelas apresentações e por cada pessoa que será alcançada.</p></div>
+          <div><em>2</em><h3>Divulgue</h3><p>Compartilhe o link, os cards e os vídeos do evento nos grupos e redes sociais.</p></div>
+          <div><em>3</em><h3>Convide</h3><p>Pense em amigos e familiares que você gostaria de levar para uma das sessões.</p></div>
+          <div><em>4</em><h3>Sirva</h3><p>Ajude na recepção, alimentação, teatro, mídia, som, intercessão ou organização.</p></div>
+        </div>
+      </section>
+
+      <section class="cj-section">
+        <div class="cj-eyebrow">PLANEJAMENTO</div>
+        <h2>Próximas fases do projeto</h2>
+        <div class="cj-steps">
+          <div><em>A</em><h3>Preparação</h3><p>Identidade visual, equipe, alimentação, divulgação e voluntários.</p></div>
+          <div><em>B</em><h3>Divulgação</h3><p>Cards, vídeos, página oficial, grupos de WhatsApp e redes sociais.</p></div>
+          <div><em>C</em><h3>Execução</h3><p>Controle de sessões, recepção, alimentação, aconselhamento e fluxo.</p></div>
+          <div><em>D</em><h3>Pós-evento</h3><p>Prestação de contas, testemunhos, contatos e acompanhamento.</p></div>
+        </div>
+      </section>
+
+      <footer class="cj-footer">Casa do Julgamento 2026 • Igreja Batista Peniel • Vitória da Conquista - BA</footer>
     </section>
     <section id="admin" class="admin"></section>
   </div>
@@ -105,7 +192,7 @@ function publicOrder(o){
 }
 async function searchOrder(){currentQuery=document.getElementById('q').value.trim();const msg=document.getElementById('publicMsg'),box=document.getElementById('results');msg.innerHTML='';box.innerHTML='';if(currentQuery.length<3){msg.innerHTML='<div class="error">Digite seu nome ou telefone.</div>';return}document.getElementById('searchBtn').disabled=true;try{const j=await req(API+'?action=lookup',{method:'POST',body:JSON.stringify({query:currentQuery})});if(!j.matches||!j.matches.length){msg.innerHTML='<div class="error">Não encontramos um pedido com esse nome ou telefone. Procure a equipe caso precise de ajuda.</div>'}else{box.innerHTML=(j.matches.length>1?'<b>Encontramos mais de um pedido. Escolha o seu:</b>':'')+j.matches.map(publicOrder).join('')}if(j.counts){renderQueue(j.counts)}}catch(e){msg.innerHTML='<div class="error">'+esc(e.message)+'</div>'}finally{document.getElementById('searchBtn').disabled=false}}
 async function joinQueue(protocol){const msg=document.getElementById('publicMsg');try{const j=await req(API+'?action=join_waitlist',{method:'POST',body:JSON.stringify({protocol,query:currentQuery})});msg.innerHTML='<div class="msg">'+esc(j.message||'Você entrou na fila de retirada.')+'</div>';await searchOrder()}catch(e){msg.innerHTML='<div class="error">'+esc(e.message)+'</div>'}}
-document.getElementById('searchBtn').onclick=searchOrder;document.getElementById('q').addEventListener('keydown',e=>{if(e.key==='Enter')searchOrder()});
+const oldSearchBtn=document.getElementById('searchBtn'),oldQ=document.getElementById('q');if(oldSearchBtn)oldSearchBtn.onclick=searchOrder;if(oldQ)oldQ.addEventListener('keydown',e=>{if(e.key==='Enter')searchOrder()});
 function adminLogin(){adminPass=document.getElementById('pass').value;loadOrders(true)}
 function adminLogout(){sessionStorage.removeItem('peniel_admin');adminPass='';orders=[];renderAdmin()}
 async function loadOrders(login){try{const j=await req(API+'?action=list',{headers:{'x-admin-password':adminPass}});orders=j.orders||[];sessionStorage.setItem('peniel_admin',adminPass);renderAdmin()}catch(e){if(login)adminPass='';renderAdmin(e.message)}}
@@ -132,8 +219,9 @@ function adminRow(o){
 }
 const isAdmin=new URLSearchParams(location.search).get('admin')==='1';
 if(isAdmin){document.getElementById('public').style.display='none';document.getElementById('admin').style.display='block';document.getElementById('modeLink').textContent='← Voltar';document.getElementById('modeLink').href='?';renderAdmin();if(adminPass)loadOrders(false);setInterval(()=>{if(adminPass)loadOrders(false)},5000)}
-else{loadQueue();setInterval(loadQueue,5000)}
+else{}
 </script>
 </body>
 </html>
-<!-- deploy-trigger: 2026-09-20 -->
+
+<!-- casa-do-julgamento-deploy: 2026-09-21 -->
