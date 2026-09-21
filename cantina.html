@@ -1,0 +1,29 @@
+<!doctype html><html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#090a0f"><title>Doações para a Cantina — Casa do Julgamento 2026</title><link rel="stylesheet" href="/support.css"></head><body>
+<header class="top"><div class="shell nav"><div class="brand">Casa do Julgamento<small>Cantina e doações</small></div><div class="spacer"></div><a class="back" href="/participar">← Voltar</a></div></header>
+<main class="shell main">
+<section class="hero"><div><div class="eyebrow">CANTINA COM PROPÓSITO</div><h1>Doe alimento. Ajude a construir.</h1><p class="lead">A ideia é simples e transparente: alimentos e insumos doados ajudam a reduzir o custo da cantina; a arrecadação das vendas pode então ser direcionada ao crescimento das obras e melhorias da igreja, conforme definição da liderança.</p></div><div class="side-note"><div class="note">🍞 Doação reduz o custo da cantina.</div><div class="note">🍔 A cantina transforma insumos em arrecadação.</div><div class="note">🧱 A arrecadação apoia as obras e melhorias da igreja.</div></div></section>
+
+<section class="section"><div class="eyebrow">COMO FUNCIONA</div><h2>Do alimento à obra</h2><div class="flow">
+<div class="item"><em>1</em><b>Você doa</b><span>Alimentos, bebidas, ingredientes, descartáveis ou outros insumos combinados com a equipe.</span></div>
+<div class="item"><em>2</em><b>A cantina prepara e vende</b><span>Os produtos são usados na operação da cantina durante o projeto.</span></div>
+<div class="item"><em>3</em><b>O resultado apoia a igreja</b><span>A destinação para obras e melhorias deve ser acompanhada e comunicada pela liderança.</span></div>
+</div></section>
+
+<section class="section"><div class="eyebrow">O QUE PODE AJUDAR</div><h2>Tipos de doação</h2><div class="grid3">
+<div class="item"><b>🥤 Bebidas</b><span>Água, refrigerantes, sucos e itens definidos pela equipe.</span></div>
+<div class="item"><b>🌭 Ingredientes</b><span>Pães, carnes, molhos, condimentos, queijo, doces e ingredientes para o cardápio.</span></div>
+<div class="item"><b>📦 Descartáveis e apoio</b><span>Copos, guardanapos, embalagens, sacolas, gelo e materiais de serviço.</span></div>
+</div><p class="small">Antes de comprar em grande quantidade, confirme com a equipe para evitar excesso ou itens que não serão usados.</p></section>
+
+<section class="section"><div class="eyebrow">QUERO DOAR</div><h2>Diga o que você pode oferecer</h2><form class="form" id="donationForm">
+<div class="field"><label>Seu nome / empresa *</label><input id="donor" required></div><div class="field"><label>WhatsApp *</label><input id="phone" required></div>
+<div class="field"><label>Tipo de doação</label><select id="type"><option>Alimentos / ingredientes</option><option>Bebidas</option><option>Descartáveis / embalagens</option><option>Equipamentos / utensílios</option><option>Outro</option></select></div>
+<div class="field"><label>Quantidade aproximada</label><input id="qty" placeholder="Ex.: 10 fardos / 50 unidades"></div>
+<div class="field full"><label>O que pretende doar? *</label><textarea id="items" required placeholder="Descreva os itens."></textarea></div>
+<div class="field full"><label>Observações</label><textarea id="notes" placeholder="Data disponível, necessidade de retirada, validade dos produtos etc."></textarea></div>
+<div class="full actions"><button class="btn red" type="submit">Combinar doação pelo WhatsApp</button></div>
+</form></section>
+
+<section class="section"><div class="eyebrow">TRANSPARÊNCIA</div><h2>Mostre o impacto depois do evento</h2><p>Uma boa evolução para esta página é publicar, após cada etapa, um resumo simples: alimentos recebidos, vendas da cantina, despesas e valor líquido destinado às obras. Isso transforma doação em confiança e ajuda o projeto a crescer de forma saudável.</p></section>
+<div class="footer"><span>Casa do Julgamento 2026 • Cantina com propósito</span><a href="/participar">Outras formas de ajudar →</a></div></main>
+<script>const v=id=>(document.getElementById(id).value||'').trim();document.getElementById('donationForm').onsubmit=e=>{e.preventDefault();const m=['Olá! Quero fazer uma DOAÇÃO para a cantina da Casa do Julgamento 2026.','','Doador/empresa: '+v('donor'),'WhatsApp: '+v('phone'),'Tipo: '+v('type'),'Quantidade: '+(v('qty')||'A combinar'),'Itens: '+v('items'),'Observações: '+(v('notes')||'Sem observações')].join('\n');window.open('https://wa.me/5577988351204?text='+encodeURIComponent(m),'_blank','noopener')};</script></body></html>
