@@ -57,6 +57,16 @@
     @media(max-width:960px){.cj-hero,.cj-grid2{grid-template-columns:1fr}.cj-grid3{grid-template-columns:1fr 1fr}.cj-steps{grid-template-columns:1fr 1fr}}
     @media(max-width:680px){.cj-hero-main{padding:30px 22px;min-height:auto}.cj-side{padding:16px}.cj-section{padding:22px}.cj-grid3,.cj-steps,.cj-dates{grid-template-columns:1fr}.cj-poster h2{font-size:34px}}
 
+  
+    .cj-caravan-btn{background:linear-gradient(180deg,#f0c66c,#b77b22);color:#19130b;box-shadow:0 12px 28px rgba(191,133,46,.24)}
+    .cj-caravan-note{margin-top:12px;color:#d8c69f;font-size:13px;font-weight:750;position:relative}
+    .cj-caravan-section{border-color:rgba(240,198,108,.22);background:linear-gradient(180deg,rgba(30,27,22,.96),rgba(10,12,17,.98))}
+    .cj-caravan-head{display:flex;align-items:flex-start;justify-content:space-between;gap:20px}.cj-caravan-badge{white-space:nowrap;padding:11px 14px;border-radius:999px;background:rgba(240,198,108,.10);border:1px solid rgba(240,198,108,.28);color:#f0d391;font-weight:900;font-size:13px}
+    .cj-benefits{margin-bottom:20px}.cj-benefits article{background:rgba(240,198,108,.045)}
+    .cj-form-wrap{margin-top:22px;background:#f6f3ed;color:#15181d;border-radius:24px;padding:24px}.cj-form-intro{margin-bottom:18px}.cj-form-intro h3{font-size:27px;margin:8px 0}.cj-form-intro p{margin:0;color:#59616b;line-height:1.65}.cj-form-tag{font-size:11px;font-weight:950;letter-spacing:.14em;color:#9b6416}
+    .cj-caravan-form{display:grid;grid-template-columns:1fr 1fr;gap:14px}.cj-field label{display:block;color:#1c222b;font-weight:850;margin-bottom:7px}.cj-field input,.cj-field select,.cj-field textarea{width:100%;padding:13px 14px;border:1px solid #d7d0c5;border-radius:12px;background:#fff;color:#15181d}.cj-field textarea{resize:vertical}.cj-full{grid-column:1/-1}.cj-form-bottom{display:flex;align-items:center;gap:14px;flex-wrap:wrap;margin-top:4px}.cj-form-bottom span{color:#68717c;font-size:12px}.cj-caravan-submit{border:0;cursor:pointer;background:linear-gradient(180deg,#d51f2a,#a40d15);color:#fff}
+    @media(max-width:680px){.cj-caravan-head{display:block}.cj-caravan-badge{display:inline-flex;margin-top:12px}.cj-caravan-form{grid-template-columns:1fr}.cj-full{grid-column:auto}.cj-form-wrap{padding:18px}}
+
   </style>
 </head>
 <body>
@@ -72,8 +82,10 @@
           <p class="cj-lead">A Igreja Batista Peniel apresenta a edição 2026 da <b>Casa do Julgamento</b>. Uma experiência evangelística interativa que conduz o público por cenas e ambientes que provocam reflexão sobre escolhas, consequências, vida e eternidade.</p>
           <div class="cj-actions">
             <a class="cj-btn cj-primary" href="#programacao">Ver programação</a>
+            <a class="cj-btn cj-caravan-btn" href="#caravana">🚌 Organizar uma caravana</a>
             <a class="cj-btn cj-ghost" href="#participar">Quero participar</a>
           </div>
+          <div class="cj-caravan-note">Para igrejas de outras cidades: ajudamos a organizar a visita do seu grupo.</div>
         </div>
 
         <aside class="cj-side" id="programacao">
@@ -105,6 +117,117 @@
           </div>
         </aside>
       </div>
+
+
+      <section class="cj-section cj-caravan-section" id="caravana">
+        <div class="cj-caravan-head">
+          <div>
+            <div class="cj-eyebrow">CARAVANAS DE OUTRAS CIDADES</div>
+            <h2>Traga sua igreja para a Casa do Julgamento</h2>
+            <p class="cj-desc">Queremos facilitar a vinda de igrejas e grupos de outras cidades. Preencha as informações abaixo e nossa equipe poderá conversar com você sobre data, quantidade de pessoas, transporte, chegada e organização do grupo.</p>
+          </div>
+          <div class="cj-caravan-badge">🚌 Atendimento para grupos</div>
+        </div>
+
+        <div class="cj-grid3 cj-benefits">
+          <article><i>📅</i><h3>Ajuda na escolha da data</h3><p>Organizamos a melhor sessão para o tamanho e o horário de chegada da sua caravana.</p></article>
+          <article><i>🚌</i><h3>Apoio com transporte</h3><p>Se o grupo precisar, podemos entender a necessidade e ajudar com orientações e contatos disponíveis.</p></article>
+          <article><i>🤝</i><h3>Recepção organizada</h3><p>A equipe já saberá que sua igreja está chegando e poderá orientar o grupo na entrada.</p></article>
+          <article><i>🍔</i><h3>Planejamento da alimentação</h3><p>Podemos saber antecipadamente se a caravana pretende utilizar a barraca de alimentação.</p></article>
+          <article><i>📣</i><h3>Material para divulgação</h3><p>O responsável pela caravana poderá usar a página e os materiais oficiais para mobilizar a igreja.</p></article>
+          <article><i>💬</i><h3>Contato direto com a equipe</h3><p>Após o formulário, a conversa segue pelo WhatsApp para acertar os detalhes da visita.</p></article>
+        </div>
+
+        <div class="cj-form-wrap">
+          <div class="cj-form-intro">
+            <span class="cj-form-tag">QUERO MONTAR UMA CARAVANA</span>
+            <h3>Conte um pouco sobre o seu grupo</h3>
+            <p>Não é uma reserva automática. Essas informações servem para nossa equipe entender a necessidade da igreja e ajudar na organização.</p>
+          </div>
+
+          <form class="cj-caravan-form" onsubmit="sendCaravan(event)">
+            <div class="cj-field">
+              <label for="cvChurch">Nome da igreja *</label>
+              <input id="cvChurch" required placeholder="Ex.: Igreja Batista Central" />
+            </div>
+            <div class="cj-field">
+              <label for="cvCity">Cidade / Estado *</label>
+              <input id="cvCity" required placeholder="Ex.: Itapetinga - BA" />
+            </div>
+            <div class="cj-field">
+              <label for="cvLeader">Responsável pela caravana *</label>
+              <input id="cvLeader" required placeholder="Nome do responsável" />
+            </div>
+            <div class="cj-field">
+              <label for="cvPhone">WhatsApp *</label>
+              <input id="cvPhone" required inputmode="tel" placeholder="(77) 99999-9999" />
+            </div>
+            <div class="cj-field">
+              <label for="cvDate">Qual data pretendem vir? *</label>
+              <select id="cvDate" required>
+                <option value="">Selecione uma data</option>
+                <option>09 de novembro — 17h</option>
+                <option>13 de novembro — 20h</option>
+                <option>14 de novembro — 18h</option>
+                <option>19 de novembro — 20h</option>
+                <option>20 de novembro — 17h</option>
+                <option>21 de novembro — 18h</option>
+                <option>Ainda não decidimos</option>
+              </select>
+            </div>
+            <div class="cj-field">
+              <label for="cvPeople">Quantas pessoas pretendem vir? *</label>
+              <input id="cvPeople" required type="number" min="1" placeholder="Ex.: 35" />
+            </div>
+            <div class="cj-field">
+              <label for="cvTransport">Precisam de ajuda com transporte? *</label>
+              <select id="cvTransport" required>
+                <option value="">Selecione</option>
+                <option>Sim, precisamos de ajuda/orientação</option>
+                <option>Não, já temos transporte</option>
+                <option>Ainda estamos verificando</option>
+              </select>
+            </div>
+            <div class="cj-field">
+              <label for="cvVehicle">Como pretendem vir?</label>
+              <select id="cvVehicle">
+                <option value="">Ainda não definido</option>
+                <option>Ônibus</option>
+                <option>Micro-ônibus</option>
+                <option>Van</option>
+                <option>Carros</option>
+                <option>Outro</option>
+              </select>
+            </div>
+            <div class="cj-field">
+              <label for="cvFood">Pretendem utilizar a barraca de alimentação?</label>
+              <select id="cvFood">
+                <option value="">Ainda não sabemos</option>
+                <option>Sim</option>
+                <option>Não</option>
+                <option>Gostaríamos de receber opções para o grupo</option>
+              </select>
+            </div>
+            <div class="cj-field">
+              <label for="cvArrival">Horário aproximado de chegada</label>
+              <input id="cvArrival" type="time" />
+            </div>
+            <div class="cj-field cj-full">
+              <label for="cvNeeds">Existe alguma necessidade especial do grupo?</label>
+              <textarea id="cvNeeds" rows="3" placeholder="Acessibilidade, idosos, crianças, dúvidas sobre transporte, alimentação, estacionamento etc."></textarea>
+            </div>
+            <div class="cj-field cj-full">
+              <label for="cvNotes">Observações</label>
+              <textarea id="cvNotes" rows="3" placeholder="Conte qualquer outra informação que possa nos ajudar a organizar a caravana."></textarea>
+            </div>
+
+            <div class="cj-full cj-form-bottom">
+              <button class="cj-btn cj-caravan-submit" type="submit">Enviar interesse da caravana pelo WhatsApp</button>
+              <span>Ao enviar, uma mensagem pronta será aberta para o WhatsApp da Igreja Batista Peniel.</span>
+            </div>
+          </form>
+        </div>
+      </section>
 
       <section class="cj-section" id="sobre">
         <div class="cj-eyebrow">MAIS QUE UM EVENTO</div>
@@ -165,6 +288,34 @@
     <section id="admin" class="admin"></section>
   </div>
 <script>
+
+function caravanVal(id){const el=document.getElementById(id);return el?String(el.value||'').trim():''}
+function sendCaravan(e){
+  e.preventDefault();
+  const church=caravanVal('cvChurch'),city=caravanVal('cvCity'),leader=caravanVal('cvLeader'),
+        phone=caravanVal('cvPhone'),date=caravanVal('cvDate'),people=caravanVal('cvPeople'),
+        transport=caravanVal('cvTransport'),vehicle=caravanVal('cvVehicle')||'Ainda não definido',
+        food=caravanVal('cvFood')||'Ainda não sabemos',arrival=caravanVal('cvArrival')||'Não informado',
+        needs=caravanVal('cvNeeds')||'Nenhuma informada',notes=caravanVal('cvNotes')||'Nenhuma';
+  const message=[
+    'Olá! Quero organizar uma CARAVANA para a Casa do Julgamento 2026.',
+    '',
+    '⛪ Igreja: '+church,
+    '📍 Cidade/Estado: '+city,
+    '👤 Responsável: '+leader,
+    '📱 WhatsApp: '+phone,
+    '📅 Data pretendida: '+date,
+    '👥 Quantidade estimada: '+people+' pessoas',
+    '🚌 Ajuda com transporte: '+transport,
+    '🚐 Meio de transporte: '+vehicle,
+    '🍔 Alimentação: '+food,
+    '🕐 Chegada aproximada: '+arrival,
+    '♿ Necessidades do grupo: '+needs,
+    '📝 Observações: '+notes
+  ].join('\n');
+  window.open('https://wa.me/5577988351204?text='+encodeURIComponent(message),'_blank','noopener');
+}
+
 const API='https://fymmeiefawrvuwworhso.supabase.co/functions/v1/orders-api';
 let currentQuery='',adminPass=sessionStorage.getItem('peniel_admin')||'',orders=[],filter='all';
 function esc(s){return String(s??'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]))}
